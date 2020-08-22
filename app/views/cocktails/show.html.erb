@@ -5,8 +5,8 @@
   <ul class="d-inline-block">
     <% @cocktail.doses.each do |dose| %>
       <li class="list-group-item">
-          <strong><%= dose.description %></strong>
-          <%= dose.ingredient.name %>
+          <strong><%= dose.ingredient.name %></strong>
+          <%= dose.description %>
           <%= link_to "Delete", dose_path(dose),
             method: :delete,
             data: { confirm: "Are you sure?" }
