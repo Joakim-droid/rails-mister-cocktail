@@ -2,7 +2,7 @@
   <%= simple_form_for [@cocktail, @dose] do |f| %>
 
     <div class="form-inputs">
-      <%= f.association :ingredient %>
+      <%= f.association :ingredient, class: 'select2' %>
       <%= f.input :description %>
     </div>
 

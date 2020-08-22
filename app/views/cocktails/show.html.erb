@@ -6,16 +6,13 @@
     <% @cocktail.doses.each do |dose| %>
       <li class="list-group-item">
           <strong><%= dose.description %></strong>
+          <%= dose.ingredient.name %>
+          <%= link_to "Delete", dose_path(dose),
+            method: :delete,
+            data: { confirm: "Are you sure?" }
+          %>
         </li>
     <% end %>
-  </ul>
-  <ul class="d-inline-block">
-    <% @cocktail.ingredients.each do |ingredient| %>
-      <li class="list-group-item">
-        <strong><%= ingredient.name %></strong>
-      </li>
-    <% end %>
-
   </ul>
   <hr>
   <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
