@@ -1,13 +1,22 @@
+<% description = '' %>
+<% name = '' %>
 <div class="container text-center mt-3 bg-light">
   <h1><%= @cocktail.name %></h1>
-  <% @cocktail.doses.each do |dose| %>
-  <p>
-    <%= dose.description %>
-  </p>
-  <% end %>
-  <% @cocktail.ingredients.each do |ingredient| %>
-  <p>
-    <%= ingredient.name %>
-  </p>
-  <% end %>
+  <ul class="d-inline-block">
+    <% @cocktail.doses.each do |dose| %>
+      <li class="list-group-item">
+          <strong><%= dose.description %></strong>
+        </li>
+    <% end %>
+  </ul>
+  <ul class="d-inline-block">
+    <% @cocktail.ingredients.each do |ingredient| %>
+      <li class="list-group-item">
+        <strong><%= ingredient.name %></strong>
+      </li>
+    <% end %>
+
+  </ul>
+  <hr>
+  <%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
 </div>
