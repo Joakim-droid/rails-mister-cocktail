@@ -5,6 +5,7 @@
 
   <ul class="d-inline-block">
     <% @cocktail.doses.each do |dose| %>
+      <br>
       <li class="list-group-item">
           <strong><%= dose.ingredient.name %></strong>
           <%= dose.description %>
