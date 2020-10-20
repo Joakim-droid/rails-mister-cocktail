@@ -9,6 +9,8 @@
 require 'open-uri'
 require 'json'
 
+Ingredient.delete_all
+
 response = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
 JSON.parse(response.read)['drinks'].each do |ingredient|
   Ingredient.create(name: ingredient['strIngredient1'])
